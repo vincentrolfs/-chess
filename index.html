@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Schach</title>
+
+    <style>
+      body {
+        background: #eee;
+      }
+
+      main {
+        max-width: 60vw;
+        margin: 0 auto;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div
+        id="board"
+        class="board-container"
+        diagram-white="Axel Rolfs"
+        diagram-black="Vincent Rolfs"
+        diagram-date="2021-12-11"
+      ></div>
+    </main>
+
+    <script>
+      document.getElementById("board").setAttribute(
+        "diagram-pgn",
+        `
+        1. e4 e5
+        2. d4 d5
+        `
+      );
+    </script>
+
+    <script>
+      (function (w, d, s, o, f, js, fjs) {
+        w["YouChess-Widget"] = o;
+        w[o] =
+          w[o] ||
+          function () {
+            (w[o].q = w[o].q || []).push(arguments);
+          };
+        (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+        js.id = o;
+        js.src = f;
+        js.async = 1;
+        fjs.parentNode.insertBefore(js, fjs);
+      })(
+        window,
+        document,
+        "script",
+        "cw",
+        "//chessdiagram.herokuapp.com/widget.js"
+      );
+    </script>
+    <script>
+      cw("init");
+    </script>
+  </body>
+</html>
